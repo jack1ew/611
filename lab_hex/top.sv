@@ -92,5 +92,14 @@ module top (
 			leds <= leds >> 1;
 		end
 	end
+	
+	hexdriver d0 (SW[3:0], HEX0);
+	hexdriver d1 (SW[7:4], HEX1);
+	hexdriver d2 (SW[11:8], HEX2);
+	hexdriver d3 (SW[15:12], HEX3);
+	hexdriver d4 ({2'b00, SW[17:16]}, HEX4);
+	hexdriver d5 (4'b0000, HEX5);
+	hexdriver d6 (4'b0000, HEX6);
+	hexdriver d7 (4'b0000, HEX7);
 
 endmodule
