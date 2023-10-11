@@ -16,9 +16,8 @@ logic [11:0] imm12;
 logic asrc, rw, gw, z;
 logic [1:0] rs;
 logic [3:0] opout;
-  logic [31:0] gout, wd, rd1, rd2, BB, RR;
+logic [31:0] gout, wd, rd1, rd2, BB, RR;
 wa = io0_n[11:7];
-  gout = {rd1, rw};
 decode dc (.instructaddr(io0_n), .funct7(f7), .rs2(r2), .rs1(r1), .funct3(f3), .rd(rd),
            .opcode(op), .imm20(imm20), .imm12(imm12));
 
@@ -42,5 +41,7 @@ always_comb begin
     wd = {io0_n[31:12], 12'b0};
   end else if (2'b10 == rs) begin
     wd = RR;
+  end else if (1'b1 == gw) begin
+    io2_out = rd1;
   end
 end
