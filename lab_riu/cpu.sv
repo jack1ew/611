@@ -32,14 +32,15 @@ regfile reg (.clk(clck), .we(rw), .readaddr1(io0_n[19:15]), .readadder2(io0_n[24
 alu al (.A(rd1), .B(BB), .op(opout), .R(RR), .zero(z));
 
 always_comb begin
-  if (1'b0 == asrc)
+  if (1'b0 == asrc) begin
     BB = rd2;
-  if (1'b1 == asrc)
+  end else if (1'b1 == asrc) begin
     BB = $signed(io0_n[31:20]);
-  if (2'b00 == rs)
+  end else if (2'b00 == rs) begin
     wd = io0_n; // IDK if this is right
-  if (2'b01 == rs)
+  end else if (2'b01 == rs) begin
     wd = {io0_n[31:12], 12'b0};
-  if (2'b10 == rs)
+  end else if (2'b10 == rs) begin
     wd = RR;
+  end
 end
