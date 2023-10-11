@@ -148,6 +148,7 @@ module controlunit (
 			regsel = 2'b01;
 			op = 4'bX;
 			gpio_we = 1'b0;
+		end
 	end
 
 endmodule
