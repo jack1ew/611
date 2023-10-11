@@ -15,38 +15,38 @@ module controlunit (
 	output gpio_we,
 	output [31:0] gpio_out,
 );
-	always @ (*) begin
-		if (opcode == 7'b0010011 && funct3 == 3'b000) // addi
+	always_comb begin
+		if (opcode == 7'b0010011 && funct3 == 3'b000) begin // addi
 			alusrc = 1'b1;
 			regwrite = 1'b1;
 			regsel = 2'b01;
 			op = 4'b0011;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0000000) // add
+		end else if (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0000000) begin // add
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0011;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) // sub
+		end else if (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) begin // sub
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0100;
 			gpio_we = 1'b0;	
-		else if (opcode == 7'b0110011 && funct3 == 3'b111) // and
+		end else if (opcode == 7'b0110011 && funct3 == 3'b111) begin // and
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0000;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0110011 && funct3 == 3'b110) // or
+		end else if (opcode == 7'b0110011 && funct3 == 3'b110) begin // or
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0001;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0110011 && funct3 == 3'b100) // xor
+		end else if (opcode == 7'b0110011 && funct3 == 3'b100) begin // xor
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
@@ -70,7 +70,7 @@ module controlunit (
 			regsel = 2'b01;
 			op = 4'b0011;
 			gpio_we = 1'b0;*/
-		else if (opcode == 7'b0110011 && funct3 == 3'b010 && funct7 == 7'b0000000) // slt
+		end else if (opcode == 7'b0110011 && funct3 == 3'b010 && funct7 == 7'b0000000) begin // slt
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
@@ -82,7 +82,7 @@ module controlunit (
 			regsel = 2'b01;
 			op = 4'b0011;
 			gpio_we = 1'b0;*/
-		else if (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0000001) // mul
+		end else if (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0000001) begin // mul
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
@@ -106,25 +106,25 @@ module controlunit (
 			regsel = 2'b01;
 			op = 4'b0011;
 			gpio_we = 1'b0;*/
-		else if (opcode == 7'b0010011 && funct3 == 3'b111) // andi
+		end else if (opcode == 7'b0010011 && funct3 == 3'b111) begin // andi
 			alusrc = 1'b1;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0000;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0010011 && funct3 == 3'b110) // ori
+		end else if (opcode == 7'b0010011 && funct3 == 3'b110) begin // ori
 			alusrc = 1'b1;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0001;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0010011 && funct3 == 3'b100) // xori
+		end else if (opcode == 7'b0010011 && funct3 == 3'b100) begin // xori
 			alusrc = 1'b1;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b0010;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0010011 && funct3 == 3'b001) // slli
+		end else if (opcode == 7'b0010011 && funct3 == 3'b001) begin // slli
 			alusrc = 1'b1;
 			regwrite = 1'b1;
 			regsel = 2'b10;
@@ -142,7 +142,7 @@ module controlunit (
 			regsel = 2'b01;
 			op = 4'b0011;
 			gpio_we = 1'b0;*/
-		else if (opcode == 7'b0110111) // lui
+		end else if (opcode == 7'b0110111) begin // lui
 			alusrc = 1'bX;
 			regwrite = 1'b1;
 			regsel = 2'b01;
