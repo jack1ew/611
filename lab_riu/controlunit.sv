@@ -1,22 +1,22 @@
 module controlunit (
-	input [6:0] funct7,
-	input [4:0] rs2,
-	input [4:0] rs1,
-	input [2:0] funct3.
-	input [4:0] rd,
-	input [6:0] opcode,
-	input [20:0] imm20,
-	input [11:0] imm12,
+	input logic [6:0] funct7,
+	input logic [4:0] rs2,
+	input logic [4:0] rs1,
+	input logic [2:0] funct3,
+	input logic [4:0] rd,
+	input logic [6:0] opcode,
+	input logic [20:0] imm20,
+	input logic [11:0] imm12,
 	
-	output alusrc,
-	output regwrite,
-	output [1:0] regsel,
-	output [3:0] op,
-	output gpio_we,
-	output [31:0] gpio_out,
+	output logic alusrc,
+	output logic regwrite,
+	output logic [1:0] regsel,
+	output logic [3:0] op,
+	output logic gpio_we,
+	output logic [31:0] gpio_out
 );
-	always_comb begin
-		if (opcode == 7'b0010011 && funct3 == 3'b000) begin // addi
+	always @(*) begin
+		if (opcode == 7'b0010011 && funct3 == 3'b000 && funct7 == 7'b0000000) begin // addi
 			alusrc = 1'b1;
 			regwrite = 1'b1;
 			regsel = 2'b01;
@@ -76,7 +76,7 @@ module controlunit (
 			regsel = 2'b10;
 			op = 4'b1100;
 			gpio_we = 1'b0;
-		else if (opcode == 7'b0110011 && funct3 == 3'b011 && funct7 == 7'b0000000) // sltu
+		end else if (opcode == 7'b0110011 && funct3 == 3'b011 && funct7 == 7'b0000000) begin // sltu
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
