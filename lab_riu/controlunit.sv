@@ -40,24 +40,24 @@ module controlunit (
 			regsel = 2'b10;
 			op = 4'b0000;
 			gpio_we = 1'b0;
-		/*else if (opcode == 7'b0110011 && funct3 == 3'b110) // or
-			alusrc = 1'b1;
+		else if (opcode == 7'b0110011 && funct3 == 3'b110) // or
+			alusrc = 1'b0;
 			regwrite = 1'b1;
-			regsel = 2'b01;
-			op = 4'b0011;
+			regsel = 2'b10;
+			op = 4'b0001;
 			gpio_we = 1'b0;
 		else if (opcode == 7'b0110011 && funct3 == 3'b100) // xor
-			alusrc = 1'b1;
+			alusrc = 1'b0;
 			regwrite = 1'b1;
-			regsel = 2'b01;
-			op = 4'b0011;
-			gpio_we = 1'b0;*/
-		else if (opcode == 7'b0110011 && funct3 == 3'b001) // sll
+			regsel = 2'b10;
+			op = 4'b0010;
+			gpio_we = 1'b0;
+		/*else if (opcode == 7'b0110011 && funct3 == 3'b001) // sll
 			alusrc = 1'b0;
 			regwrite = 1'b1;
 			regsel = 2'b10;
 			op = 4'b1000;
-			gpio_we = 1'b0;
+			gpio_we = 1'b0;*/
 		/*else if (opcode == 7'b0110011 && funct3 == 3'b101 && funct7 == 7'b0100000) // sra
 			alusrc = 1'b1;
 			regwrite = 1'b1;
@@ -112,18 +112,18 @@ module controlunit (
 			regsel = 2'b10;
 			op = 4'b0000;
 			gpio_we = 1'b0;
-		/*else if (opcode == 7'b0010011 && funct3 == 3'b110) // ori
+		else if (opcode == 7'b0010011 && funct3 == 3'b110) // ori
 			alusrc = 1'b1;
 			regwrite = 1'b1;
-			regsel = 2'b01;
-			op = 4'b0011;
+			regsel = 2'b10;
+			op = 4'b0001;
 			gpio_we = 1'b0;
 		else if (opcode == 7'b0010011 && funct3 == 3'b100) // xori
 			alusrc = 1'b1;
 			regwrite = 1'b1;
-			regsel = 2'b01;
-			op = 4'b0011;
-			gpio_we = 1'b0;*/
+			regsel = 2'b10;
+			op = 4'b0010;
+			gpio_we = 1'b0;
 		else if (opcode == 7'b0010011 && funct3 == 3'b001) // slli
 			alusrc = 1'b1;
 			regwrite = 1'b1;
