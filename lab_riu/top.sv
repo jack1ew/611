@@ -92,5 +92,14 @@ module top (
 			leds <= leds >> 1;
 		end
 	end
-
+	logic [31:0] hexout;
+	cpu cpu_(.clck(CLOCK_50), .rst_n(KEY[0]), .io0_n(SW), .io2_out(hexout));
+	hexdriver d0 (hexout[3:0], HEX0);
+	hexdriver d1 (hexout[7:4], HEX1);
+	hexdriver d2 (hexout[11:8], HEX2);
+	hexdriver d3 (hexout[15:12], HEX3);
+	hexdriver d4 ({2'b00, hexout[17:16]}, HEX4);
+	hexdriver d5 (4'b0000, HEX5);
+	hexdriver d6 (4'b0000, HEX6);
+	hexdriver d7 (4'b0000, HEX7);
 endmodule
