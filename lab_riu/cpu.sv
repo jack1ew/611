@@ -65,4 +65,3 @@ alu myalu (.A(A_EX), .B(B_EX), .op(aluop_EX), .R(R_EX), .zero(z));
 
 endmodule
 
-endmodule
