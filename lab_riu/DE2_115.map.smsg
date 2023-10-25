@@ -1,0 +1,5 @@
+Warning (10273): Verilog HDL warning at controlunit.sv(103): extended using "x" or "z" File: /acct/jackiew/611/lab_riu/controlunit.sv Line: 103
+Warning (10273): Verilog HDL warning at controlunit.sv(105): extended using "x" or "z" File: /acct/jackiew/611/lab_riu/controlunit.sv Line: 105
+Warning (10273): Verilog HDL warning at controlunit.sv(109): extended using "x" or "z" File: /acct/jackiew/611/lab_riu/controlunit.sv Line: 109
+Warning (10273): Verilog HDL warning at controlunit.sv(154): extended using "x" or "z" File: /acct/jackiew/611/lab_riu/controlunit.sv Line: 154
+Warning (10268): Verilog HDL information at regfile.sv(22): always construct contains both blocking and non-blocking assignments File: /acct/jackiew/611/lab_riu/regfile.sv Line: 22

@@ -37,7 +37,7 @@ always_comb begin
 	else if (we && readaddr2 == writeaddr) readdata2 = writedata;
 	else readdata2 = mem[readaddr2];
 	
-	/*$display("reg1: %h", mem[1]); 
+	$display("reg1: %h", mem[1]); 
 	$display("reg2: %h", mem[2]); 
 	$display("reg3: %h", mem[3]);
 	$display("reg4: %h", mem[4]);
@@ -56,8 +56,8 @@ always_comb begin
 	$display("reg17: %h", mem[17]); 
 	$display("reg18: %h", mem[18]); 
 	$display("reg19: %h", mem[19]);
-	
-	$display("-----------------");*/
+	$display("reg20: %h", mem[20]);
+	$display("-----------------");
 end
 
 endmodule

@@ -53,6 +53,7 @@ module simtop;
 	
 	// assign simulated switch values
 	assign SW = 18'd12345;
+	
 
 endmodule
 

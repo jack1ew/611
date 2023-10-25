@@ -40,7 +40,7 @@ always_ff @(posedge clck)
 always_ff @(posedge clck) begin
   regdest_WB <= instruction_EX[11:7];
   if (hex_we_EX) out <= A_EX;
-  $display("%h", out);
+  //$display("%h", out);
   regwrite_WB <= regwrite_EX;
   regsel_WB <= regsel_EX;
   in_WB <= in;
@@ -64,4 +64,5 @@ alu myalu (.A(A_EX), .B(B_EX), .op(aluop_EX), .R(R_EX), .zero(z));
 
 
 endmodule
+
 

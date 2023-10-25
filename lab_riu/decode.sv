@@ -25,4 +25,4 @@ module decode (
         assign imm12 = instructaddr [31:20];
         
 endmodule
-		
+// works?
